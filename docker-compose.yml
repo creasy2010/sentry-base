@@ -16,7 +16,7 @@ services:
 
   redis:
     restart: always
-    image: 'redis:5.0-alpine'
+    image: 'redis:5.0.9'
     volumes:
       - 'sentry-redis:/data'
 
