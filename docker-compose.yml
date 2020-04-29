@@ -24,6 +24,4 @@ volumes:
   cnpm-files-volume:
   cnpm-db-volume:
   sentry-postgres:
-    external: true
   sentry-redis:
-    external: true
