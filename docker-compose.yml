@@ -1,0 +1,29 @@
+version: '3'
+services:
+  postgres:
+    image: 'postgres:9.6'
+    restart: always
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+    volumes:
+      - 'sentry-postgres:/var/lib/postgresql/data'
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  redis:
+    restart: always
+    image: 'redis:5.0-alpine'
+    volumes:
+      - 'sentry-redis:/data'
+
+volumes:
+  cnpm-files-volume:
+  cnpm-db-volume:
+  sentry-postgres:
+    external: true
+  sentry-redis:
+    external: true
